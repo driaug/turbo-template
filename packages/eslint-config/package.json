@@ -2,6 +2,9 @@
   "name": "@repo/eslint-config",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
   "files": [
     "library.js",
     "next.js",

@@ -1,16 +1,22 @@
 {
-  "name": "turbo-template",
+  "name": "repo",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "clean": "rimraf node_modules .turbo",
+    "ui:add": "yarn workspace @repo/ui ui:add",
+    "db:migrate:dev": "yarn workspace @repo/db migrate:dev",
+    "db:migrate:prod": "yarn workspace @repo/db migrate:prod",
+    "services:up": "docker compose -p repo up -d",
+    "services:down": "docker compose -p repo down"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "prettier": "^3.2.5",
+    "rimraf": "^5.0.7",
     "turbo": "latest"
   },
   "engines": {
